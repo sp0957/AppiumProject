@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.Main.Main2">
+        <methods>
+          <include name="grid"/>
+          <include name="switcher"/>
+          <include name="contrl"/>
+          <include name="popup"/>
+          <include name="search"/>
+          <include name="button"/>
+          <include name="layout"/>
+          <include name="bar"/>
+          <include name="chrono"/>
+          <include name="gallerys"/>
+          <include name="List"/>
+          <include name="configureAppium"/>
+          <include name="Progress"/>
+          <include name="layoutAnimation"/>
+          <include name="image"/>
+          <include name="Animationn"/>
+          <include name="date"/>
+          <include name="autoComplete"/>
+          <include name="dragDrop"/>
+          <include name="secure"/>
+          <include name="tearDown"/>
+          <include name="seek"/>
+          <include name="radio"/>
+          <include name="pickerr"/>
+        </methods>
+      </class> <!-- com.Main.Main2 -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
