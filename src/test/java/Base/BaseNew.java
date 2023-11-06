@@ -9,6 +9,7 @@ import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.android.AndroidDriver;
 
 public class BaseNew {
+	AndroidDriver driver;
 
 	public void drop(WebElement source,AndroidDriver driver) {
 		((JavascriptExecutor) driver).executeScript("mobile: dragGesture", ImmutableMap.of(
@@ -35,5 +36,14 @@ public class BaseNew {
 			    "direction", direction,
 			    "percent", 0.75
 			));		
+	}
+	//DragnDrop
+	public void drop(WebElement source) {
+		((JavascriptExecutor) driver).executeScript("mobile: dragGesture", ImmutableMap.of(
+			    "elementId", ((RemoteWebElement) source).getId(),
+			    "endX", 619,// try to chang X Y values 
+			    "endY", 560
+			));
+		
 	}
 }
