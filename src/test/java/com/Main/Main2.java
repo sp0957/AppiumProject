@@ -106,8 +106,13 @@ public class Main2 {
 			driver.findElement(AppiumBy.accessibilityId("Views")).click();
 			Thread.sleep(2000);
 			
-
-
+			//for appium server
+//			{
+//				  "appium:app": "D:\\sahil_learn\\apk file-20230711T054826Z-001\\apk file\\ApiDemos-debug.apk",
+//				  "appium:deviceName": "sahil3",
+//				  "appium:platformName": "android",
+//				  "appium:automationName": "UIAutomator2"
+//				}
 			
 	
 	 }
