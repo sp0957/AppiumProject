@@ -7,9 +7,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import com.Modual.Animation;
@@ -40,6 +42,7 @@ import com.Modual.TextSwitcher;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 
@@ -65,7 +68,7 @@ public class Main2 {
 	Drag_Drop DD;
 	Date_widgets DW;
 	Control control;
-	 public AppiumDriverLocalService service;
+//	 public AppiumDriverLocalService service;
     Animation animation = null;
 	Layout LY;
 	Picker PK;
@@ -75,21 +78,37 @@ public class Main2 {
 
 
 	
-	@BeforeClass
+	@BeforeMethod
 	 public void configureAppium() throws MalformedURLException, InterruptedException {
 			//start appium service
-//			service=new AppiumServiceBuilder()
-//					.withAppiumJS(new File("C:\\Users\\JENIS\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
-//					.withIPAddress("127.0.0.1").usingPort(4723).build();
-//			service.start();
+		AppiumDriverLocalService	service=new AppiumServiceBuilder()
+					.withAppiumJS(new File("C:\\Users\\JENIS\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
+					.withIPAddress("127.0.0.1")
+					.usingPort(4723).build();
+			service.start();
 			
+			//For emulator 
 			UiAutomator2Options options = new UiAutomator2Options();
 	        options.setDeviceName("sahil3");
 	        options.setApp("D:\\sahil_learn\\apk file-20230711T054826Z-001\\apk file\\ApiDemos-debug.apk");
 	        
+	        //For Real device
+//	        DesiredCapabilities dsCapabilities=new DesiredCapabilities();
+//			dsCapabilities.setCapability(MobileCapabilityType.APP, "D:\\sahil_learn\\apk file-20230711T054826Z-001\\apk file\\ApiDemos-debug.apk");
+//			dsCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
+//			dsCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "OPPO CPH2285");
+//			dsCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "13.0");
+//			dsCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+//			URL url=new URL("http://127.0.0.1:4723");
+//			AndroidDriver driver=new AndroidDriver(url, dsCapabilities);
+	        
 	         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 			driver.findElement(AppiumBy.accessibilityId("Views")).click();
 			Thread.sleep(2000);
+			
+
+
+			
 	
 	 }
 	
@@ -127,6 +146,7 @@ public class Main2 {
 		CM.chronometre(driver);
 		driver.navigate().back();
 	}
+	
  	@Test(priority = 3)
 	public void contrl() throws InterruptedException {
 		control=new Control();
@@ -184,13 +204,14 @@ public class Main2 {
 		driver.navigate().back();
 
 	}
+	
 	@Test(priority = 9)
 	public void image() throws MalformedURLException, InterruptedException {
 		IS =new ImageSwitcher();
 		IS.switchwr(driver);
 		driver.navigate().back();
 	}
-	
+
 	@Test(priority = 10)
 	public void layoutAnimation() throws MalformedURLException, InterruptedException {
 		LA=new Layout_Animation();
@@ -213,6 +234,7 @@ public class Main2 {
 		driver.navigate().back();
 		
 	}
+	
 	
 	@Test(priority = 12)
 	public void pickerr() throws MalformedURLException, InterruptedException {
@@ -294,6 +316,7 @@ public class Main2 {
 		driver.navigate().back();
 		
 	}
+
 	@Test(priority = 21)
 	public void switcher() throws MalformedURLException, InterruptedException {
 		Thread.sleep(4000);
@@ -301,10 +324,11 @@ public class Main2 {
 		TS.text(driver);
 		
 	}
+	
 	 @AfterMethod
 		public void tearDown() {
 //			driver.quit();
-	        service.close();
+//	        service.close();
 		}
 
 }

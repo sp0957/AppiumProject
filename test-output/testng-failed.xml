@@ -5,30 +5,8 @@
     <classes>
       <class name="com.Main.Main2">
         <methods>
-          <include name="grid"/>
-          <include name="switcher"/>
-          <include name="contrl"/>
-          <include name="popup"/>
-          <include name="search"/>
-          <include name="button"/>
-          <include name="layout"/>
-          <include name="bar"/>
-          <include name="chrono"/>
-          <include name="gallerys"/>
-          <include name="List"/>
-          <include name="configureAppium"/>
-          <include name="Progress"/>
-          <include name="layoutAnimation"/>
-          <include name="image"/>
-          <include name="Animationn"/>
-          <include name="date"/>
-          <include name="autoComplete"/>
-          <include name="dragDrop"/>
-          <include name="secure"/>
           <include name="tearDown"/>
-          <include name="seek"/>
-          <include name="radio"/>
-          <include name="pickerr"/>
+          <include name="configureAppium"/>
         </methods>
       </class> <!-- com.Main.Main2 -->
     </classes>
