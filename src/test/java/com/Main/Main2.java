@@ -1,5 +1,5 @@
 package com.Main;
-
+//.@(#&$abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 import java.awt.Container;
 import java.awt.Scrollbar;
 import java.io.File;
@@ -7,6 +7,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -92,7 +93,7 @@ public class Main2 {
 	        options.setDeviceName("sahil3");
 	        options.setApp("D:\\sahil_learn\\apk file-20230711T054826Z-001\\apk file\\ApiDemos-debug.apk");
 	        
-	        //For Real device
+	        //For Real device ==Option 1
 //	        DesiredCapabilities dsCapabilities=new DesiredCapabilities();
 //			dsCapabilities.setCapability(MobileCapabilityType.APP, "D:\\sahil_learn\\apk file-20230711T054826Z-001\\apk file\\ApiDemos-debug.apk");
 //			dsCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
@@ -102,8 +103,19 @@ public class Main2 {
 //			URL url=new URL("http://127.0.0.1:4723");
 //			AndroidDriver driver=new AndroidDriver(url, dsCapabilities);
 	        
+	        //For Real device ==Option 2
+//	        DesiredCapabilities cap=new DesiredCapabilities();
+//			cap.setCapability("deviceName", "OPPO CPH2285");
+//			cap.setCapability("udid", "JFPRCINFQCSOWW6S");
+//			cap.setCapability("platformName", "Android");
+//			cap.setCapability("platformVersion", "13.0");
+//			cap.setCapability("appPackage", "com.dencreak.dlcalculator");
+//			cap.setCapability("appActivity", "com.dencreak.dlcalculator.DLCalculatorActivity");
+//			cap.setCapability("automationName", "UIAutomator2");
+	        
 	         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 			driver.findElement(AppiumBy.accessibilityId("Views")).click();
+			
 			Thread.sleep(2000);
 			
 			//for appium server
